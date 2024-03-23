@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import BlogList from "./Blogs";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([
@@ -23,17 +24,7 @@ const Blogs = () => {
     },
   ]);
 
-  return (
-    <div className="home">
-      {blogs.map((blog) => (
-        <div className="blog-review" key={blog.id}>
-          <h2>{blog.title}</h2>
-          <h4>{blog.author}</h4>
-          <p>{blog.body}</p>
-        </div>
-      ))}
-    </div>
-  );
+  return <BlogList blogs={blogs} title="All Blogs" />;
 };
 
 export default Blogs;
